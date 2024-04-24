@@ -14,6 +14,7 @@ import {
   playCurrent,
 } from "../../ReduxToolkit/Features/SongSlice";
 
+import { toast } from "react-toastify";
 export function* getSongSaga() {
   const { data } = yield getSongAPI();
   yield put(getSongs(data));
@@ -22,19 +23,23 @@ export function* addSongSaga(action) {
   try {
     const { data } = yield call(postSongAPI, action.formData);
     yield put(addSong(data));
+    toast.success('Song is added successfully!')
   } catch (error) {
-    console.log(error)
-    yield put(addError(error.response.data.error))
+    console.log(error);
+    yield put(addError(error.response.data.error));
   }
 }
 export function* updateSongSaga(action) {
   const { data } = yield call(updateSongAPI, action.id, action.artist);
+  console.log("----------------", data);
   yield put(playCurrent(data.updatedSong));
   yield put(getSongs(data.songsList));
+  toast.info('Song is updated successfully!')
 }
 export function* deleteSongSaga(action) {
   const { data } = yield call(deleteSongAPI, action.id);
   yield put(deleteSong(data));
+  toast.error('Song is deleted successfully!')
 }
 
 export function* wactchSongAsync() {

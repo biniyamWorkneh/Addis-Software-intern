@@ -18,6 +18,10 @@ export const ContentContainer = styled.div`
   text-align: center;
   width: 100vw;
   justify-content: space-around;
+  margin-Top:40px;
+  margin-Bottom:40px; 
+  max-Height: calc(100vh - 90px);
+   overflow-Y: auto;
   /* display: flex;
     flex-direction: row;
     */

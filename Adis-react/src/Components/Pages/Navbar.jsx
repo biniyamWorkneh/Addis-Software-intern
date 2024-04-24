@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Header, Nav, Text, Logo, UploadContainer, FileInput, UploadButton, DropdownButton, DropdownContent, DropdownItem } from '../Style/Navbar.styled';
+import { Header, Nav, Text, Logo, UploadContainer, 
+  FileInput, UploadButton, DropdownButton, DropdownContent, DropdownItem } from '../Style/Navbar.styled';
 import immm from "../../../public/b22.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
@@ -18,6 +19,7 @@ const Navbar = () => {
     formData.append("file", fileValue);
     formData.append("artist", artist);
     dispatch({ type: ADD_SONG, formData });
+    setShowForm(!showForm);
   };
 
   const handleUpload = (e) => {

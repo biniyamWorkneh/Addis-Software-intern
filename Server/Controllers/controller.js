@@ -68,10 +68,9 @@ const addSong = async (req, res) => {
 };
 const updateSong = async (req, res) => {
   const { id } = req.params;
-  let artist = req.body.changedValue || ''; // Initialize artist as empty string if req.body.changedValue is undefined
-  console.log(req.body)
-  if (artist.length === 0) {
-    artist = 'Unknown Artist';
+  let artist = req.body.changedValue;
+  if(artist.length === 0){
+    artist = 'Unknown Artist'
   }
   try {
     const updatedSong = await Songs.findByIdAndUpdate(

@@ -41,6 +41,7 @@ export const FileInput = styled.input`
 export const UploadButton = styled.input`
   background-color: #1976d2;
   color:black;
+  color: white;
   border: none;
   padding: 10px 16px;
   cursor: pointer;

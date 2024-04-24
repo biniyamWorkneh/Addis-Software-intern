@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const SongListStyle = styled.div`
-  width: 30%;
+  width: 50%;
   height: 100vh;
   overflow-y: scroll;
   display: flex;
-  /* overflow: hidden; */
   grid-template-columns: 6fr 4fr;
+
   background-color: white;
-  box-shadow: 1px 1px 25px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 25px 3px rgba(0, 0, 0, 0.3);
   @media (max-width:786px){
     width: 100%;
     max-width: 100%;
@@ -22,9 +22,8 @@ export const Song = styled.p`
 `;
 export const List = styled.section`
   display: flex;
-  /* height: 40px; */
   &:hover {
-    background-color:silver;
+    background-color: #ddd;
     color: black;
   }
   background-color: white;
@@ -52,8 +51,8 @@ export const ListButton = styled.li`
   border: none;
   margin-top: 0.1em;
   color: black;
-  padding: 24px 28px;
-  font-size: 13px;
+  padding: 14px 28px;
+  font-size: 16px;
   cursor: pointer;
   /* text-align: center; */
  
@@ -63,46 +62,17 @@ export const Holder = styled.div`
     width: 100%;
 `
 export const DeleteButton = styled.button`
-  background: ${(props) => (props.$primary ? "red" : "white")};
-  color: ${(props) => (props.$primary ? "white" : "red")};
-  font-size: 15px;
-  margin: 0.5em;
+  background: ${(props) => (props.$primary ? "palevioletred" : "white")};
+  color: ${(props) => (props.$primary ? "white" : "palevioletred")};
+  font-size: 20px;
+  margin: 1em;
   align-items: center;
-  padding: 0.25em 0.7em;
-  border: 2px solid red;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
   border-radius: 3px;
   cursor:pointer;
   &:hover {
-    background-color:red;
-    color:white;
-  }
-`;
-export const EditSong = styled.button`
-  align-items: center;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
-  padding: 15px 10px;
-  margin: 20px;
-  margin-top: 30px;
-  
-  color: white;
-  background-color: palevioletred;
-`;
-export const ArtistHolder = styled.section`
-  display: flex;
-  flex-direction: row;
-  /* &:hover {
-    background-color: #ddd;
-    color: black;
-  } */
-  background-color: white;
-  justify-content: center;
-  margin: 20px;
-  p {
-    margin-top: 25px;
+    background-color: palevioletred;
+    color: white;
   }
 `;

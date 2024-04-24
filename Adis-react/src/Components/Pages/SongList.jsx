@@ -1,65 +1,64 @@
-  import React, { useEffect, useState } from "react";
-  import {
-    List,
-    SongListStyle,
-    DeleteButton,
-    Holder,
-    ListButton,
-  } from "../Style/SongList.styled";
-  import { playCurrent } from "../ReduxToolkit/Features/SongSlice";
-  import { useDispatch, useSelector } from "react-redux";
-  import { RiDeleteBin5Line } from "react-icons/ri";
-  import { DELETE_SONG, GET_SONG } from "../ReduxSaga/Types/ActionTypes";
+import React, { useEffect, useState } from "react";
+import {
+  List,
+  SongListStyle,
+  DeleteButton,
+  Holder,
+  ListButton,
+} from "../Style/SongList.styled";
+import { playCurrent } from "../ReduxToolkit/Features/SongSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { DELETE_SONG, GET_SONG } from "../ReduxSaga/Types/ActionTypes";
 
-  const SongList = () => {
-    const songList = useSelector((state) => state.Songs.songs);
-    const dispatch = useDispatch();
-    const [clicked,setClicked] = useState(false);
-    const handleSong = (song) => {
-      dispatch(playCurrent(song));
-    };
-    useEffect(() => {
-      const fetchFunc = async () => {
-        dispatch({ type: GET_SONG });
-      };
-      fetchFunc();
-    }, []);
-    const handleDelete = async (song) => {
-      const id = song._id;
-      dispatch({ type: DELETE_SONG, id });
-    };
-    return (
-      <>
-        <SongListStyle>
-          {songList && (
-            <Holder>
-              {songList.map((items, index) => (
-                <List key={index}>
-                   <DeleteButton
-                    deleteSong={items}
-                    onClick={() => {
-                      handleDelete(items);
-                    }}
-                    primary
-                  >
-                    <RiDeleteBin5Line />
-                  </DeleteButton>
-                  <ListButton
-                    onClick={() => {
-                      setClicked(true)
-                      handleSong(items);
-                    }}
-                  >
-                    {items.artist}
-                  </ListButton>
-                
-                </List>
-              ))}
-            </Holder>
-          )}
-        </SongListStyle>
-      </>
-    );
+const SongList = () => {
+  const songList = useSelector((state) => state.Songs.songs);
+  const dispatch = useDispatch();
+  const [clicked,setClicked] = useState(false);
+  const handleSong = (song) => {
+    dispatch(playCurrent(song));
   };
+  useEffect(() => {
+    const fetchFunc = async () => {
+      dispatch({ type: GET_SONG });
+    };
+    fetchFunc();
+  }, []);
+  const handleDelete = async (song) => {
+    const id = song._id;
+    dispatch({ type: DELETE_SONG, id });
+  };
+  return (
+    <>
+      <SongListStyle>
+        {songList && (
+          <Holder>
+            {songList.map((items, index) => (
+              <List key={index}>
+                <ListButton
+                  onClick={() => {
+                    setClicked(true)
+                    handleSong(items);
+                  }}
+                >
+                  {items.artist}
+                </ListButton>
+                <DeleteButton
+                  deleteSong={items}
+                  onClick={() => {
+                    handleDelete(items);
+                  }}
+                  primary
+                >
+                  <RiDeleteBin5Line />
+                </DeleteButton>
+              </List>
+            ))}
+          </Holder>
+        )}
+      </SongListStyle>
+    </>
+  );
+};
 
-  export default SongList;
+export default SongList;

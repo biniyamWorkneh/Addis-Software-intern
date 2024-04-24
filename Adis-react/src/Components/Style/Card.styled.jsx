@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 10000;
   margin: 40px;
-  
-`;
+  /* height: auto; */
+  `;
 
 export const CardBody = styled.div`
   height: 180px;
@@ -41,7 +41,7 @@ export const CardBody = styled.div`
 `;
 
 export const CardText = styled.div`
-  color: black;
+  color:blue;
   /* text-overflow: ellipsis; 
   white-space: nowrap;  */
   text-align: center;
@@ -50,11 +50,32 @@ export const CardText = styled.div`
 export const CardIcon = styled.div`
   color:#FB6B90;
   font-size: 15px;
-  
+  margin: 5px;
   &:hover {
     color: red;
   }
 `;
 export const EditButton = styled.div`
   background-color: blue;
+  border-radius: 10px;
+  color:white;
+  height: 20px;
+  margin-top: 25px;
+  padding: 6px;
+  margin-left: 10px;
+  
 `
+export const IconD = styled.div`
+  display: flex;
+  align-items: center;
+`
+export const CardIconU = styled.div`
+  color:lightslategrey;
+  font-size: 15px;
+  margin: 5px;
+  :hover{
+    color:blue
+  }
+`
+export const DisIn = styled.div`
+display:flex;`

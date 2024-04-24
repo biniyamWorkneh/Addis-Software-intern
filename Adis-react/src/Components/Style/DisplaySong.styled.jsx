@@ -2,7 +2,12 @@ import styled from "styled-components";
 import { IoPauseCircle } from 'react-icons/io5';
 import { AiFillPlayCircle } from "react-icons/ai";
 
+// export const Body = styled.div`
+//   background-color: purple;
+//   width:100%;
+//   height: auto;
 
+// `
 export const Footer = styled.div`
     position: fixed;
     height: 50px;
@@ -32,11 +37,9 @@ export const Containers=styled.div`
 `
 export const StyledAiFillPlayCircle= styled(AiFillPlayCircle)`
    font-size: 20px;
-   :hover{color:lightskyblue}
 `
 export const StyledIoPauseCircle = styled(IoPauseCircle)`
     font-size: 20px;
-    :hover{color:lightskyblue}
 `
 export const ProgressBarContainer = styled.div`
   display: flex;
@@ -58,3 +61,7 @@ export const RangeInput = styled.input.attrs({
 height:3px;
 
 `;
+export const AudioPlayer = styled.div`
+    width: 100%;
+  background-color: gold;
+`
