@@ -67,11 +67,11 @@ const CardItem = ({ song, handleSong, currentMusic }) => {
       )}
 
       {isPlaying ? (
-        <FaPause onClick={togglePlay} style={{ color: 'green' }} />
+        <FaPause onClick={togglePlay} style={{ color: '#153250' }} />
       ) : (
         <FaPlayCircle
           onClick={togglePlay}
-          style={{ color: 'green' }}
+          style={{ color: '#153250' }}
         />
       )}
 

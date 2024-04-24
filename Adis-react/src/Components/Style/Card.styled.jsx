@@ -41,7 +41,7 @@ export const CardBody = styled.div`
 `;
 
 export const CardText = styled.div`
-  color:blue;
+  color:black;
   /* text-overflow: ellipsis; 
   white-space: nowrap;  */
   text-align: center;
