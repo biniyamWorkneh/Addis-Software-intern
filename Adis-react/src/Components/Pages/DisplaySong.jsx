@@ -20,7 +20,7 @@ const DisplaySong = () => {
   return (
     <Footer>
       {currentMusic && <AudioPlayer
-        src={`http://localhost:3000/uploads/${currentMusic.song}`}
+        src={`https://addis-software-intern-1.onrender.com/uploads/${currentMusic.song}`}
         controls
         autoPlay
       ></AudioPlayer>}

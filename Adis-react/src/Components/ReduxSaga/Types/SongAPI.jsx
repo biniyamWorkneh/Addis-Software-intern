@@ -1,23 +1,23 @@
 import axios from "axios";
 
 export const getSongAPI = async () =>
-  await axios.get("http://localhost:3000/getSongs");
+  await axios.get("https://addis-software-intern-1.onrender.com/getSongs");
 export const postSongAPI = async (sendFile) => {
   const data = await axios.post(
-    "http://localhost:3000/addSongs",
+    "https://addis-software-intern-1.onrender.com/addSongs",
     sendFile
   );
   return data;
 };
 export const deleteSongAPI = async (id) => {
   const data = await axios.delete(
-    "http://localhost:3000/deleteSong/" + id
+    "https://addis-software-intern-1.onrender.com/deleteSong/" + id
   );
   return data;
 };
 export const updateSongAPI = async (id, artist) => {
   const data =  await axios.patch(
-    "http://localhost:3000/updateSongs/" + id,
+    "https://addis-software-intern-1.onrender.com/updateSongs/" + id,
     artist
   );
   return data;
